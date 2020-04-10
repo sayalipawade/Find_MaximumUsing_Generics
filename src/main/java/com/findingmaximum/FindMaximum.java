@@ -20,4 +20,19 @@ public class FindMaximum
         }
         return maxNumber;
     }
+
+    //Finding maximum between three float numbers
+    public Float findingFloatMaximum(Float firstNumber,Float secondNumber,Float thirdNumber)
+    {
+        float maxNumber=firstNumber;
+        if(secondNumber.compareTo(maxNumber)>0)
+        {
+            maxNumber=secondNumber;
+        }
+        else if(thirdNumber.compareTo(maxNumber)>0)
+        {
+            maxNumber=thirdNumber;
+        }
+        return maxNumber;
+    }
 }
