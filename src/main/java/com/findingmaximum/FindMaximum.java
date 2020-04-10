@@ -35,4 +35,19 @@ public class FindMaximum
         }
         return maxNumber;
     }
+
+    //finding maximum between three String
+    public String findingStringMaximum(String firstString,String secondString,String thirdString)
+    {
+        String maxString=firstString;
+        if(secondString.compareTo(maxString)>0)
+        {
+            maxString=secondString;
+        }
+        else if(thirdString.compareTo(maxString)>0)
+        {
+            maxString=thirdString;
+        }
+        return maxString;
+    }
 }

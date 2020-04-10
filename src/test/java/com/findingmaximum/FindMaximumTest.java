@@ -25,7 +25,7 @@ public class FindMaximumTest
     @Test
     public void givenThreeIntegers_WhenThirdMax_ThenReturnTrue()
     {
-        int maximum=findMaximum.findingMaximum(30,20,30);
+        int maximum=findMaximum.findingMaximum(20,10,30);
         Assert.assertEquals(30,maximum);
     }
 
@@ -52,4 +52,29 @@ public class FindMaximumTest
         Float maximum=findMaximum.findingFloatMaximum(20.0f,30.0f,30.0f);
         Assert.assertEquals((Float)30.0f,maximum);
     }
+
+    /* If first string is maximum then should return maximum */
+    @Test
+    public void givenThreeString_WhenFirstMax_ThenReturnTrue()
+    {
+        String maximum=findMaximum.findingStringMaximum("ABC","XYZ","PQR");
+        Assert.assertEquals("XYZ",maximum);
+    }
+
+    /* If second string is maximum then should return maximum*/
+    @Test
+    public void givenThreeString_WhenSecondtMax_ThenReturnTrue()
+    {
+        String maximum=findMaximum.findingStringMaximum("PQR","XYZ","ABC");
+        Assert.assertEquals("XYZ",maximum);
+    }
+
+    /* If third string is maximum then should return maximum*/
+    @Test
+    public void givenThreeString_WhenThirdMax_ThenReturnTrue()
+    {
+        String maximum=findMaximum.findingStringMaximum("PQR","ABC","XYZ");
+        Assert.assertEquals("XYZ",maximum);
+    }
+
 }
