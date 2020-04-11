@@ -1,53 +1,51 @@
 package com.findingmaximum;
-public class FindMaximum
+public class FindMaximum <T extends Comparable<T>>
 {
+    //variables
+    T firstVariable;
+    T secondVariable;
+    T ThirdVariable;
+
+    //set instance variable using constructor
+    public FindMaximum(T firstVariable,T secondVariable,T thirdVariable)
+    {
+        this.firstVariable=firstVariable;
+        this.secondVariable=secondVariable;
+        this.ThirdVariable=thirdVariable;
+    }
+
+    //main method
     public static void main(String[] args)
     {
         System.out.println("Welcome to finding maximum");
     }
 
-    //Finding maximum between three integers
-    public Integer findingMaximum(Integer firstNumber,Integer secondNumber,Integer thirdNumber)
+    //finding maximum value
+    public <T extends Comparable <T>>  T getMaximumValue(T firstValue,T secondValue,T thirdValue)
     {
-        int maxNumber=firstNumber;
-        if(secondNumber.compareTo(maxNumber)>0)
+        T maxResult=firstValue;
+        if(secondValue.compareTo(maxResult)>0)
         {
-            maxNumber=secondNumber;
+            maxResult=secondValue;
         }
-        else if(thirdNumber.compareTo(maxNumber)>0)
+        else if(thirdValue.compareTo(maxResult)>0)
         {
-            maxNumber=thirdNumber;
+            maxResult=thirdValue;
         }
-        return maxNumber;
+        return maxResult;
     }
 
-    //Finding maximum between three float numbers
-    public Float findingFloatMaximum(Float firstNumber,Float secondNumber,Float thirdNumber)
+    //pass instance variable
+    public T getMaximumValue()
     {
-        float maxNumber=firstNumber;
-        if(secondNumber.compareTo(maxNumber)>0)
-        {
-            maxNumber=secondNumber;
-        }
-        else if(thirdNumber.compareTo(maxNumber)>0)
-        {
-            maxNumber=thirdNumber;
-        }
-        return maxNumber;
+        T maxValue=getMaximumValue(firstVariable,secondVariable,ThirdVariable);
+        printMaxValue(maxValue);
+        return maxValue;
     }
 
-    //finding maximum between three String
-    public String findingStringMaximum(String firstString,String secondString,String thirdString)
+    //printing maximum value
+    public void printMaxValue(T maxValue)
     {
-        String maxString=firstString;
-        if(secondString.compareTo(maxString)>0)
-        {
-            maxString=secondString;
-        }
-        else if(thirdString.compareTo(maxString)>0)
-        {
-            maxString=thirdString;
-        }
-        return maxString;
+        System.out.println(maxValue);
     }
 }
