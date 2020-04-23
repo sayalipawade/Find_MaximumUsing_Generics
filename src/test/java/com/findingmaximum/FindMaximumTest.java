@@ -4,13 +4,12 @@ import org.junit.Test;
 
 public class FindMaximumTest
 {
-    FindMaximum findMaximum=new FindMaximum(10,20,10);
     /* If first number is maximum then should return maximum number*/
     @Test
     public void givenThreeIntegers_WhenFirstMax_ThenReturnTrue()
     {
         FindMaximum findMaximum=new FindMaximum(30,20,10);
-        Integer maximum=(Integer) findMaximum.getMaximumValue();
+        Integer maximum=(Integer)findMaximum.getMaximumValue();
         Assert.assertEquals((Integer)30,maximum);
     }
 
@@ -86,4 +85,30 @@ public class FindMaximumTest
         Assert.assertEquals("XYZ",maximum);
     }
 
+    /*Given Integer numbers should return maximum number*/
+    @Test
+    public void GivenIntegerNumber_ShouldReturnMaximumNumber()
+    {
+        FindMaximum findMaximum=new FindMaximum();
+        Integer lastElement=(Integer)findMaximum.getMaximumValue(50,10,20,30,40,60);
+        Assert.assertEquals((Integer)60,lastElement);
+    }
+
+    /*Given Float numbers Should return maximum number */
+    @Test
+    public void GivenFloatNumber_ShouldReturnMaximumNumber()
+    {
+        FindMaximum findMaximum=new FindMaximum();
+        Float lastElement=(Float)findMaximum.getMaximumValue(10.20f,50.10f,30.20f,70.10f,80.50f);
+        Assert.assertEquals((Float)80.50f,lastElement);
+    }
+
+    /*Given String values should return maximum value */
+    @Test
+    public void GivenStringValues_ShouldReturnMaximumValue()
+    {
+        FindMaximum findMaximum=new FindMaximum();
+        String lastElement=(String)findMaximum.getMaximumValue("ABC","PQR","XYZ","LMN","PST","POD");
+        Assert.assertEquals((String)"XYZ",lastElement);
+    }
 }
